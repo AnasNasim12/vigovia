@@ -2,11 +2,11 @@
 import React from "react";
 const style = {
   // purple for the "Day 1" pill via --primary token
-  ["--primary" as any]: "#3A2568",
+  ["--primary" as keyof React.CSSProperties]: "#3A2568",
   // blue for the timeline line via --accent token
-  ["--accent" as any]: "#2F80ED",
+  ["--accent" as keyof React.CSSProperties]: "#2F80ED",
   // dark purple for the timeline circles
-  ["--circle-color" as any]: "#321E5D",
+  ["--circle-color" as keyof React.CSSProperties]: "#321E5D",
 } as React.CSSProperties;
 
 export default function Page() {
@@ -82,11 +82,11 @@ export default function Page() {
       </div>
       <section
         style={style}
-        className="mx-auto max-w-[1280px] px-6 py-10 bg-white text-foreground"
+        className="max-w-screen-2xl mx-auto px-6 py-6 bg-white text-foreground"
       >
         <div className="flex w-full items-start gap-8">
           {/* Left vertical pill */}
-          <div className="hidden md:flex h-[460px] w-[112px] shrink-0 items-center justify-center rounded-[48px] bg-[#321E5D] text-white shadow-sm">
+          <div className="hidden md:flex h-[290px] w-[56px] shrink-0 items-center justify-center rounded-[48px] bg-[#321E5D] text-white shadow-sm">
             <span
               className="text-2xl font-semibold tracking-wide"
               style={{
@@ -99,11 +99,11 @@ export default function Page() {
           </div>
 
           {/* Main media + title block */}
-          <div className="flex min-w-[320px] max-w-[420px] flex-col items-center text-center">
+          <div className="flex min-w-[320px] max-w-[420px] h-[250px] flex-col items-center text-center">
             <img
               src="/Ellipse 1847.png"
               alt="Promenade lined with palm trees at sunset"
-              className="size-[320px] rounded-full object-cover shadow"
+              className="w-[180px] h-[180px] rounded-full object-cover shadow"
             />
             <h2
               id="day-1-title"
@@ -111,9 +111,9 @@ export default function Page() {
             >
               27th November
             </h2>
-            <p className="text-xl text-black leading-7">
+            <p className="text-md text-black">
               Arrival In Singapore & City
-              <br className="hidden sm:block" />
+              <br />
               Exploration
             </p>
           </div>
@@ -121,35 +121,35 @@ export default function Page() {
           {/* Timeline + content */}
           <div className="flex w-full items-stretch gap-8">
             {/* Vertical timeline rail */}
-            <div className="relative w-10 shrink-0 h-[400px]">
+            <div className="relative w-6 shrink-0 h-[300px]">
               {/* rail */}
-              <div className="absolute left-1/2 top-[18px] bottom-[35px] w-[6px] -translate-x-1/2 rounded-full bg-[var(--accent)]" />
+              <div className="absolute left-1/2 top-[12px] bottom-[62px] w-[3px] -translate-x-1/2 rounded-full bg-[var(--accent)]" />
               {/* node: morning */}
-              <span className="absolute left-1/2 top-[18px] z-[1] block size-10 -translate-x-1/2 -translate-y-1/2 rounded-full border-[6px] border-[var(--circle-color)] bg-white" />
+              <span className="absolute left-1/2 top-[12px] z-[1] block size-6 -translate-x-1/2 -translate-y-1/2 rounded-full border-[3px] border-[var(--circle-color)] bg-white" />
               {/* node: afternoon */}
-              <span className="absolute left-1/2 top-1/3 z-[1] block size-10 -translate-x-1/2 -translate-y-1/2 rounded-full border-[6px] border-[var(--circle-color)] bg-white" />
+              <span className="absolute left-1/2 top-[65px] z-[1] block size-6 -translate-x-1/2 -translate-y-1/2 rounded-full border-[3px] border-[var(--circle-color)] bg-white" />
               {/* node: evening */}
-              <span className="absolute left-1/2 bottom-[15px] z-[1] block size-10 -translate-x-1/2 -translate-y-1/2 rounded-full border-[6px] border-[var(--circle-color)] bg-white" />
+              <span className="absolute left-1/2 bottom-[50px] z-[1] block size-6 -translate-x-1/2 -translate-y-1/2 rounded-full border-[3px] border-[var(--circle-color)] bg-white" />
             </div>
 
             {/* Headings + bullets */}
-            <div className="relative flex-1 h-[400px]">
+            <div className="relative flex-1 h-[300px]">
               {/* Morning */}
               <div className="absolute top-0 left-0 right-0 grid grid-cols-[160px_1fr] gap-4">
-                <div className="text-3xl text-black font-semibold whitespace-nowrap">
+                <div className="text-xl text-black font-semibold whitespace-nowrap">
                   Morning
                 </div>
-                <ul className="text-black list-disc pl-6 text-2xl leading-9">
+                <ul className="text-black font-light list-disc pl-6 text-lg leading-9">
                   <li>Arrive In Singapore. Transfer From Airport To Hotel.</li>
                 </ul>
               </div>
 
               {/* Afternoon */}
-              <div className="absolute top-1/2 left-0 right-0 -translate-y-1/2 grid grid-cols-[160px_1fr] gap-4">
-                <div className="text-3xl text-black font-semibold whitespace-nowrap">
+              <div className="absolute top-[120px] left-0 right-0 -translate-y-1/2 grid grid-cols-[160px_1fr] gap-4">
+                <div className="text-xl text-black font-semibold whitespace-nowrap">
                   Afternoon
                 </div>
-                <ul className="text-black list-disc pl-6 text-2xl leading-9">
+                <ul className="text-black font-light list-disc pl-6 text-lg leading-9">
                   <li>Check Into Your Hotel.</li>
                   <li>Visit Marina Bay Sands Sky Park (2-3 Hours).</li>
                   <li>
@@ -160,11 +160,11 @@ export default function Page() {
               </div>
 
               {/* Evening */}
-              <div className="absolute bottom-0 left-0 right-0 grid grid-cols-[160px_1fr] gap-4">
-                <div className="text-3xl text-black font-semibold whitespace-nowrap">
+              <div className="absolute bottom-[20px] left-0 right-0 grid grid-cols-[160px_1fr] gap-4">
+                <div className="text-xl text-black font-semibold whitespace-nowrap">
                   Evening
                 </div>
-                <ul className="text-black list-disc pl-6 text-2xl leading-9">
+                <ul className="text-black font-light list-disc pl-6 text-lg leading-9">
                   <li>
                     Explore Gardens By The Bay, Including Super Tree Grove (3-4
                     Hours)
@@ -175,7 +175,250 @@ export default function Page() {
           </div>
         </div>
       </section>
-      
-    </div>
+
+      {/* Grey margin line */}
+      <div className="max-w-screen-2xl mx-auto">
+        <div className="w-full h-px bg-gray-300"></div>
+      </div>
+
+      <section
+        style={style}
+        className="max-w-screen-2xl mx-auto px-6 py-6 bg-white text-foreground"
+      >
+        <div className="flex w-full items-start gap-8">
+          {/* Left vertical pill */}
+          <div className="hidden md:flex h-[290px] w-[56px] shrink-0 items-center justify-center rounded-[48px] bg-[#321E5D] text-white shadow-sm">
+            <span
+              className="text-2xl font-semibold tracking-wide"
+              style={{
+                writingMode: "vertical-rl",
+                transform: "rotate(180deg)",
+              }}
+            >
+              Day 2
+            </span>
+          </div>
+
+          {/* Main media + title block */}
+          <div className="flex min-w-[320px] max-w-[420px] h-[250px] flex-col items-center text-center">
+            <img
+              src="/Ellipse 1848.png"
+              alt="Promenade lined with palm trees at sunset"
+              className="w-[180px] h-[180px] rounded-full object-cover shadow"
+            />
+            <h2
+              id="day-1-title"
+              className="mt-8 text-black text-balance text-2xl font-semibold tracking-tight"
+            >
+              27th November
+            </h2>
+            <p className="text-md text-black">
+              Arrival In Singapore & City
+              <br />
+              Exploration
+            </p>
+          </div>
+
+          {/* Timeline + content */}
+          <div className="flex w-full items-stretch gap-8">
+            {/* Vertical timeline rail */}
+            <div className="relative w-6 shrink-0 h-[300px]">
+              {/* rail */}
+              <div className="absolute left-1/2 top-[12px] bottom-[62px] w-[3px] -translate-x-1/2 rounded-full bg-[var(--accent)]" />
+              {/* node: morning */}
+              <span className="absolute left-1/2 top-[12px] z-[1] block size-6 -translate-x-1/2 -translate-y-1/2 rounded-full border-[3px] border-[var(--circle-color)] bg-white" />
+              {/* node: afternoon */}
+              <span className="absolute left-1/2 top-[65px] z-[1] block size-6 -translate-x-1/2 -translate-y-1/2 rounded-full border-[3px] border-[var(--circle-color)] bg-white" />
+              {/* node: evening */}
+              <span className="absolute left-1/2 bottom-[50px] z-[1] block size-6 -translate-x-1/2 -translate-y-1/2 rounded-full border-[3px] border-[var(--circle-color)] bg-white" />
+            </div>
+
+            {/* Headings + bullets */}
+            <div className="relative flex-1 h-[300px]">
+              {/* Morning */}
+              <div className="absolute top-0 left-0 right-0 grid grid-cols-[160px_1fr] gap-4">
+                <div className="text-xl text-black font-semibold whitespace-nowrap">
+                  Morning
+                </div>
+                <ul className="text-black font-light list-disc pl-6 text-lg leading-9">
+                  <li>Arrive In Singapore. Transfer From Airport To Hotel.</li>
+                </ul>
+              </div>
+
+              {/* Afternoon */}
+              <div className="absolute top-[120px] left-0 right-0 -translate-y-1/2 grid grid-cols-[160px_1fr] gap-4">
+                <div className="text-xl text-black font-semibold whitespace-nowrap">
+                  Afternoon
+                </div>
+                <ul className="text-black font-light list-disc pl-6 text-lg leading-9">
+                  <li>Check Into Your Hotel.</li>
+                  <li>Visit Marina Bay Sands Sky Park (2-3 Hours).</li>
+                  <li>
+                    Optional: Stroll Along Marina Bay Waterfront Promenade Or
+                    Helix Bridge.
+                  </li>
+                </ul>
+              </div>
+
+              {/* Evening */}
+              <div className="absolute bottom-[20px] left-0 right-0 grid grid-cols-[160px_1fr] gap-4">
+                <div className="text-xl text-black font-semibold whitespace-nowrap">
+                  Evening
+                </div>
+                <ul className="text-black font-light list-disc pl-6 text-lg leading-9">
+                  <li>
+                    Explore Gardens By The Bay, Including Super Tree Grove (3-4
+                    Hours)
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Grey margin line */}
+      <div className="max-w-screen-2xl mx-auto">
+        <div className="w-full h-px bg-gray-300"></div>
+      </div>
+
+      <section
+        style={style}
+        className="max-w-screen-2xl mx-auto px-6 py-6 bg-white text-foreground"
+      >
+        <div className="flex w-full items-start gap-8">
+          {/* Left vertical pill */}
+          <div className="hidden md:flex h-[290px] w-[56px] shrink-0 items-center justify-center rounded-[48px] bg-[#321E5D] text-white shadow-sm">
+            <span
+              className="text-2xl font-semibold tracking-wide"
+              style={{
+                writingMode: "vertical-rl",
+                transform: "rotate(180deg)",
+              }}
+            >
+              Day 3
+            </span>
+          </div>
+
+          {/* Main media + title block */}
+          <div className="flex min-w-[320px] max-w-[420px] h-[250px] flex-col items-center text-center">
+            <img
+              src="/Ellipse 1849.png"
+              alt="Promenade lined with palm trees at sunset"
+              className="w-[180px] h-[180px] rounded-full object-cover shadow"
+            />
+            <h2
+              id="day-1-title"
+              className="mt-8 text-black text-balance text-2xl font-semibold tracking-tight"
+            >
+              27th November
+            </h2>
+            <p className="text-md text-black">
+              Arrival In Singapore & City
+              <br />
+              Exploration
+            </p>
+          </div>
+
+          {/* Timeline + content */}
+          <div className="flex w-full items-stretch gap-8">
+            {/* Vertical timeline rail */}
+            <div className="relative w-6 shrink-0 h-[300px]">
+              {/* rail */}
+              <div className="absolute left-1/2 top-[12px] bottom-[62px] w-[3px] -translate-x-1/2 rounded-full bg-[var(--accent)]" />
+              {/* node: morning */}
+              <span className="absolute left-1/2 top-[12px] z-[1] block size-6 -translate-x-1/2 -translate-y-1/2 rounded-full border-[3px] border-[var(--circle-color)] bg-white" />
+              {/* node: afternoon */}
+              <span className="absolute left-1/2 top-[65px] z-[1] block size-6 -translate-x-1/2 -translate-y-1/2 rounded-full border-[3px] border-[var(--circle-color)] bg-white" />
+              {/* node: evening */}
+              <span className="absolute left-1/2 bottom-[50px] z-[1] block size-6 -translate-x-1/2 -translate-y-1/2 rounded-full border-[3px] border-[var(--circle-color)] bg-white" />
+            </div>
+
+            {/* Headings + bullets */}
+            <div className="relative flex-1 h-[300px]">
+              {/* Morning */}
+              <div className="absolute top-0 left-0 right-0 grid grid-cols-[160px_1fr] gap-4">
+                <div className="text-xl text-black font-semibold whitespace-nowrap">
+                  Morning
+                </div>
+                <ul className="text-black font-light list-disc pl-6 text-lg leading-9">
+                  <li>Arrive In Singapore. Transfer From Airport To Hotel.</li>
+                </ul>
+              </div>
+
+              {/* Afternoon */}
+              <div className="absolute top-[120px] left-0 right-0 -translate-y-1/2 grid grid-cols-[160px_1fr] gap-4">
+                <div className="text-xl text-black font-semibold whitespace-nowrap">
+                  Afternoon
+                </div>
+                <ul className="text-black font-light list-disc pl-6 text-lg leading-9">
+                  <li>Check Into Your Hotel.</li>
+                  <li>Visit Marina Bay Sands Sky Park (2-3 Hours).</li>
+                  <li>
+                    Optional: Stroll Along Marina Bay Waterfront Promenade Or
+                    Helix Bridge.
+                  </li>
+                </ul>
+              </div>
+
+              {/* Evening */}
+              <div className="absolute bottom-[20px] left-0 right-0 grid grid-cols-[160px_1fr] gap-4">
+                <div className="text-xl text-black font-semibold whitespace-nowrap">
+                  Evening
+                </div>
+                <ul className="text-black font-light list-disc pl-6 text-lg leading-9">
+                  <li>
+                    Explore Gardens By The Bay, Including Super Tree Grove (3-4
+                    Hours)
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+       {/* Grey margin line */}
+       <div className="max-w-screen-2xl mx-auto">
+         <div className="w-full h-px bg-gray-300"></div>
+       </div>
+
+       {/* Company Information Section */}
+       <div className="max-w-screen-2xl mx-auto px-6 py-6 bg-white">
+         <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
+           {/* Left Section - Company Details */}
+           <div className="flex-1">
+             <h3 className="text-md font-bold text-black mb-2">Vigovia Tech Pvt. Ltd</h3>
+             <p className="text-sm text-black">
+               Registered Office: Hd-109 Cinnabar Hills,<br/> Links Business Park, Karnataka, India.
+             </p>
+           </div>
+
+           {/* Middle Section - Contact Information */}
+           <div className="flex-1">
+             <div className="space-y-2">
+               <p className="text-sm text-black">
+                 <span className="font-semibold">Phone:</span> +91-9504061112
+               </p>
+               <p className="text-sm text-black">
+                 <span className="font-semibold">Email ID:</span> Utkarsh@Vigovia.Com
+               </p>
+               <p className="text-sm text-black">
+                 <span className="font-semibold">CIN:</span> U79110KA2024PTC191890
+               </p>
+             </div>
+           </div>
+
+           {/* Right Section - Logo */}
+           <div className="flex flex-col items-center">
+             <img
+               src="/Frame 206.png"
+               alt="Vigovia Logo"
+               className="w-48 h-auto mb-2"
+             />
+           </div>
+         </div>
+       </div>
+     </div>
   );
 }
