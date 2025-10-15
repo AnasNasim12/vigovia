@@ -9,6 +9,14 @@ const style = {
   ["--circle-color" as keyof React.CSSProperties]: "#321E5D",
 } as React.CSSProperties;
 
+const flights = [
+  { date: "Thu 10 Jan’24", airline: "Fly Air India (AX-123)", route: "From Delhi (DEL) To Singapore (SIN)." },
+  { date: "Thu 10 Jan’24", airline: "Fly Air India (AX-123)", route: "From Delhi (DEL) To Singapore (SIN)." },
+  { date: "Thu 10 Jan’24", airline: "Fly Air India (AX-123)", route: "From Delhi (DEL) To Singapore (SIN)." },
+  { date: "Thu 10 Jan’24", airline: "Fly Air India (AX-123)", route: "From Delhi (DEL) To Singapore (SIN)." },
+];
+
+
 export default function Page() {
   return (
     <div className="min-h-screen bg-white px-4 md:px-[100px]">
@@ -212,11 +220,7 @@ export default function Page() {
             >
               27th November
             </h2>
-            <p className="text-md text-black">
-              Arrival In Singapore & City
-              <br />
-              Exploration
-            </p>
+            <p className="text-md text-black">Singapore City Excursion</p>
           </div>
 
           {/* Timeline + content */}
@@ -314,9 +318,7 @@ export default function Page() {
               27th November
             </h2>
             <p className="text-md text-black">
-              Arrival In Singapore & City
-              <br />
-              Exploration
+              Gardens by the Bay + Marina Bay
             </p>
           </div>
 
@@ -378,47 +380,231 @@ export default function Page() {
         </div>
       </section>
 
-       {/* Grey margin line */}
-       <div className="max-w-screen-2xl mx-auto">
-         <div className="w-full h-px bg-gray-300"></div>
-       </div>
+      {/* Grey margin line */}
+      <div className="max-w-screen-2xl mx-auto">
+        <div className="w-full h-px bg-gray-300"></div>
+      </div>
 
-       {/* Company Information Section */}
-       <div className="max-w-screen-2xl mx-auto px-6 py-6 bg-white">
-         <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
-           {/* Left Section - Company Details */}
-           <div className="flex-1">
-             <h3 className="text-md font-bold text-black mb-2">Vigovia Tech Pvt. Ltd</h3>
-             <p className="text-sm text-black">
-               Registered Office: Hd-109 Cinnabar Hills,<br/> Links Business Park, Karnataka, India.
-             </p>
-           </div>
+      {/* Company Information Section */}
+      <div className="max-w-screen-2xl mx-auto px-6 py-6 bg-white">
+        <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
+          {/* Left Section - Company Details */}
+          <div className="flex-1">
+            <h3 className="text-md font-bold text-black mb-2">
+              Vigovia Tech Pvt. Ltd
+            </h3>
+            <p className="text-sm text-black">
+              Registered Office: Hd-109 Cinnabar Hills,
+              <br /> Links Business Park, Karnataka, India.
+            </p>
+          </div>
 
-           {/* Middle Section - Contact Information */}
-           <div className="flex-1">
-             <div className="space-y-2">
-               <p className="text-sm text-black">
-                 <span className="font-semibold">Phone:</span> +91-9504061112
-               </p>
-               <p className="text-sm text-black">
-                 <span className="font-semibold">Email ID:</span> Utkarsh@Vigovia.Com
-               </p>
-               <p className="text-sm text-black">
-                 <span className="font-semibold">CIN:</span> U79110KA2024PTC191890
-               </p>
+          {/* Middle Section - Contact Information */}
+          <div className="flex-1">
+            <div className="space-y-2">
+              <p className="text-sm text-black">
+                <span className="font-semibold">Phone:</span> +91-9504061112
+              </p>
+              <p className="text-sm text-black">
+                <span className="font-semibold">Email ID:</span>{" "}
+                Utkarsh@Vigovia.Com
+              </p>
+              <p className="text-sm text-black">
+                <span className="font-semibold">CIN:</span>{" "}
+                U79110KA2024PTC191890
+              </p>
+            </div>
+          </div>
+
+          {/* Right Section - Logo */}
+          <div className="flex flex-col items-center">
+            <img
+              src="/Frame 206.png"
+              alt="Vigovia Logo"
+              className="w-48 h-auto mb-2"
+            />
+          </div>
+        </div>
+      </div>
+
+      {/* Grey margin line */}
+      <div className="w-screen -mx-4 md:-mx-[100px]">
+        <div className="h-px bg-gray-900"></div>
+      </div>
+
+      <section
+        style={style}
+        className="max-w-screen-2xl mt-12 mx-auto px-6 py-6 bg-white text-foreground"
+      >
+        <div className="flex w-full items-start gap-8">
+          {/* Left vertical pill */}
+          <div className="hidden md:flex h-[290px] w-[56px] shrink-0 items-center justify-center rounded-[48px] bg-[#321E5D] text-white shadow-sm">
+            <span
+              className="text-2xl font-semibold tracking-wide"
+              style={{
+                writingMode: "vertical-rl",
+                transform: "rotate(180deg)",
+              }}
+            >
+              Day 4
+            </span>
+          </div>
+
+          {/* Main media + title block */}
+          <div className="flex min-w-[320px] max-w-[420px] h-[250px] flex-col items-center text-center">
+            <img
+              src="/Ellipse 1850.png"
+              alt="Promenade lined with palm trees at sunset"
+              className="w-[180px] h-[180px] rounded-full object-cover shadow"
+            />
+            <h2
+              id="day-1-title"
+              className="mt-8 text-black text-balance text-2xl font-semibold tracking-tight"
+            >
+              27th November
+            </h2>
+            <p className="text-md text-black">Arrive in Genting and relax</p>
+          </div>
+
+          {/* Timeline + content */}
+          <div className="flex w-full items-stretch gap-8">
+            {/* Vertical timeline rail */}
+            <div className="relative w-6 shrink-0 h-[300px]">
+              {/* rail */}
+              <div className="absolute left-1/2 top-[12px] bottom-[62px] w-[3px] -translate-x-1/2 rounded-full bg-[var(--accent)]" />
+              {/* node: morning */}
+              <span className="absolute left-1/2 top-[12px] z-[1] block size-6 -translate-x-1/2 -translate-y-1/2 rounded-full border-[3px] border-[var(--circle-color)] bg-white" />
+              {/* node: afternoon */}
+              <span className="absolute left-1/2 top-[65px] z-[1] block size-6 -translate-x-1/2 -translate-y-1/2 rounded-full border-[3px] border-[var(--circle-color)] bg-white" />
+              {/* node: evening */}
+              <span className="absolute left-1/2 bottom-[50px] z-[1] block size-6 -translate-x-1/2 -translate-y-1/2 rounded-full border-[3px] border-[var(--circle-color)] bg-white" />
+            </div>
+
+            {/* Headings + bullets */}
+            <div className="relative flex-1 h-[300px]">
+              {/* Morning */}
+              <div className="absolute top-0 left-0 right-0 grid grid-cols-[160px_1fr] gap-4">
+                <div className="text-xl text-black font-semibold whitespace-nowrap">
+                  Morning
+                </div>
+                <ul className="text-black font-light list-disc pl-6 text-lg leading-9">
+                  <li>Arrive In Singapore. Transfer From Airport To Hotel.</li>
+                </ul>
+              </div>
+
+              {/* Afternoon */}
+              <div className="absolute top-[120px] left-0 right-0 -translate-y-1/2 grid grid-cols-[160px_1fr] gap-4">
+                <div className="text-xl text-black font-semibold whitespace-nowrap">
+                  Afternoon
+                </div>
+                <ul className="text-black font-light list-disc pl-6 text-lg leading-9">
+                  <li>Check Into Your Hotel.</li>
+                  <li>Visit Marina Bay Sands Sky Park (2-3 Hours).</li>
+                  <li>
+                    Optional: Stroll Along Marina Bay Waterfront Promenade Or
+                    Helix Bridge.
+                  </li>
+                </ul>
+              </div>
+
+              {/* Evening */}
+              <div className="absolute bottom-[20px] left-0 right-0 grid grid-cols-[160px_1fr] gap-4">
+                <div className="text-xl text-black font-semibold whitespace-nowrap">
+                  Evening
+                </div>
+                <ul className="text-black font-light list-disc pl-6 text-lg leading-9">
+                  <li>
+                    Explore Gardens By The Bay, Including Super Tree Grove (3-4
+                    Hours)
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Grey margin line */}
+      <div className="max-w-screen-2xl mx-auto">
+        <div className="w-full h-px bg-gray-300"></div>
+      </div>
+
+       <section className="w-full max-w-6xl mx-auto py-12 mt-4 px-6">
+         <h1 className="text-3xl text-black font-bold mb-8">
+           Flight <span className="text-[#680099]">Summary</span>
+         </h1>
+         
+         <div className="space-y-4">
+           {flights.map((flight, index) => (
+             <div key={index} className="relative w-full mb-3">
+               <div className="flex items-center border-1 border-[#541C9C] rounded-lg overflow-hidden">
+                 <div className="relative flex-shrink-0 bg-[#F9EEFF] border-r-0" style={{ width: '200px', height: '60px' }}>
+                   <div className="absolute inset-0 flex items-center justify-center">
+                     <span className="text-lg font-bold text-black">{flight.date}</span>
+                   </div>
+                 </div>
+                 
+                 <div className="relative flex-shrink-0" style={{ marginLeft: '-2px' }}>
+                   <svg
+                     width="80"
+                     height="60"
+                     viewBox="0 0 80 60"
+                     preserveAspectRatio="none"
+                     xmlns="http://www.w3.org/2000/svg"
+                     className="block"
+                   >
+                     <path
+                       d="M 0 0 L 45 25 Q 60 30 45 35 L 0 60 Z"
+                       fill="#F9EEFF"
+                     />
+                     
+                     <line
+                       x1="0"
+                       y1="0"
+                       x2="45"
+                       y2="25"
+                       stroke="#541C9C"
+                       strokeWidth="1"
+                       strokeLinecap="round"
+                     />
+                     
+                     <path
+                       d="M 45 25 Q 60 30 45 35"
+                       stroke="#541C9C"
+                       strokeWidth="1"
+                       fill="none"
+                       strokeLinecap="round"
+                     />
+                     
+                     <line
+                       x1="45"
+                       y1="35"
+                       x2="0"
+                       y2="60"
+                       stroke="#541C9C"
+                       strokeWidth="1"
+                       strokeLinecap="round"
+                     />
+                   </svg>
+                 </div>
+                 
+                 <div className="flex-1 px-6 py-3 bg-white">
+                   <div className="flex items-center justify-end mr-4 gap-2">
+                     <span className="text-lg font-bold text-black">{flight.airline}</span>
+                     <span className="text-lg text-gray-700">{flight.route}</span>
+                   </div>
+                 </div>
+               </div>
              </div>
-           </div>
-
-           {/* Right Section - Logo */}
-           <div className="flex flex-col items-center">
-             <img
-               src="/Frame 206.png"
-               alt="Vigovia Logo"
-               className="w-48 h-auto mb-2"
-             />
-           </div>
+           ))}
          </div>
-       </div>
-     </div>
+         
+         <p className="mt-6 text-sm text-gray-500">
+           Note: All Flights Include Meals, Seat Choice (Excluding XL), And 20kg/25Kg Checked Baggage.
+         </p>
+       </section>
+
+
+    </div>
   );
 }
